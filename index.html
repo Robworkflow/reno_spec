@@ -59,6 +59,29 @@
               <input type="date" id="walkthrough_date" name="walkthrough_date">
             </div>
           </div>
+          <div class="form-group">
+            <label for="unit_type">Unit Type</label>
+            <select id="unit_type" name="unit_type">
+              <option value="">— Select —</option>
+              <option value="1BR">1BR</option>
+              <option value="2BR">2BR</option>
+              <option value="3BR">3BR</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quote_from">Quote Requested From <span style="color:var(--danger)">*</span></label>
+            <input type="text" id="quote_from" name="quote_from" placeholder="Contractor name and/or email" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="budget_target">Budget Target</label>
+              <input type="text" id="budget_target" name="budget_target" placeholder="e.g. $25,000">
+            </div>
+            <div class="form-group">
+              <label for="deadline">Deadline</label>
+              <input type="date" id="deadline" name="deadline">
+            </div>
+          </div>
           <button type="submit" class="btn btn-primary">Create Spec Sheet →</button>
         </form>
       </div>

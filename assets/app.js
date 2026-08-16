@@ -32,11 +32,16 @@ function showScreen(name) {
 // ── INTAKE FORM ────────────────────────────────
 document.getElementById('intake-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const address = this.address.value.trim();
-  const unit    = this.unit.value.trim();
-  const date    = this.walkthrough_date.value;
+  const address       = this.address.value.trim();
+  const unit          = this.unit.value.trim();
+  const date          = this.walkthrough_date.value;
+  const unit_type     = this.unit_type.value;
+  const quote_from    = this.quote_from.value.trim();
+  const budget_target = this.budget_target.value.trim();
+  const deadline      = this.deadline.value;
 
-  if (!address) return toast('Please enter a property address.', 'error');
+  if (!address)    return toast('Please enter a property address.', 'error');
+  if (!quote_from) return toast('Quote Requested From is required.', 'error');
 
   const id = slugify(`${address}-${unit || 'na'}-${randSuffix()}`);
 
@@ -48,6 +53,12 @@ document.getElementById('intake-form').addEventListener('submit', async function
     status: 'draft',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
+    formData: {
+      unit_type,
+      quote_from,
+      budget_target,
+      deadline,
+    },
     sections: buildBlankSections(),
     notes: {
       start_date: '',
@@ -129,10 +140,11 @@ function renderHeader() {
   const h = document.getElementById('record-header');
   h.querySelector('.record-address').textContent =
     record.address + (record.unit ? ` — Unit ${record.unit}` : '');
+  const unitType = record.formData?.unit_type ? ` · ${record.formData.unit_type}` : '';
   h.querySelector('.record-meta').textContent =
-    `Walkthrough: ${record.walkthrough_date || '—'}  ·  ID: ${record.id}`;
+    `Walkthrough: ${record.walkthrough_date || '—'}${unitType}  ·  ID: ${record.id}`;
 
-  const pill = h.querySelector('.status-pill');
+  const pill = document.getElementById('status-pill');
   pill.className = `status-pill ${record.status}`;
   pill.textContent = record.status.toUpperCase();
 

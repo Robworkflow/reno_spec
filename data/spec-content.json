@@ -1,0 +1,1273 @@
+{
+  "sections": [
+    {
+      "id": "kitchen",
+      "title": "KITCHEN",
+      "type": "spec",
+      "note": "⚡ Electrical Permit Notice: Any electrical work (receptacles, switches, fixtures, fans, panels) must comply with the Ontario Electrical Safety Code. Where a permit is mandated, the contractor is responsible for obtaining it — the cost of the permit is assumed to be included in the quoted price and will not be treated as an extra unless flagged and approved by Daniko in writing before work begins.",
+      "items": [
+        {
+          "id": "kitchen_cabinet_doors",
+          "name": "Cabinet Doors",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "White Shaker — ThermoFoil MDF",
+            "sub": "Smooth white finish • Manufactured in-house • Soft-close hinges • Slow-close drawer slides • Height-adjustable legs • 5/8\" melamine box"
+          }
+        },
+        {
+          "id": "kitchen_cabinet_hardware",
+          "name": "Cabinet Hardware",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Bar Pull — Brushed Nickel, 5\"L",
+            "sub": "Horizontal on all drawers (centred) • Cabinet knob: 40mm x 22mm brushed nickel, vertical on all doors"
+          }
+        },
+        {
+          "id": "kitchen_cabinet_ceiling_gap",
+          "name": "Cabinet-to-Ceiling Gap",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Crown Molding — If Applicable",
+            "sub": "Where a gap exists between the top of the upper cabinets and the ceiling, install large or stacked crown molding to bridge the space. Applies to small-to-medium gaps only — flag to Daniko if the gap is large enough to require a different solution (e.g. soffit or filler panel). Confirm on-site during walkthrough."
+          }
+        },
+        {
+          "id": "kitchen_countertop",
+          "name": "Countertop",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Classic Calacatta 2038 — Quartz",
+            "sub": "2cm thickness • Double front edge profile • Supplier: Rapid Quartz • Next-day install available"
+          }
+        },
+        {
+          "id": "kitchen_backsplash",
+          "name": "Backsplash",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Olympia Ceramic Subway — Arctic White, Beveled High Gloss",
+            "sub": "3\" x 6\" • 70/30 Brick Lay/Subway install • 15 sq ft / 136 pcs per box"
+          }
+        },
+        {
+          "id": "kitchen_grout",
+          "name": "Grout",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Flextile Unsanded Grout — Snow White 551",
+            "sub": "25 lb bag"
+          }
+        },
+        {
+          "id": "kitchen_faucet",
+          "name": "Kitchen Faucet",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "MOEN Adler Pull-Down — Spot Resist Stainless Steel",
+            "sub": "Model 87233SRS • Power Clean spray technology • Reflex smooth-docking pulldown • Single handle, deckplate included • Sizing/reach to be field-verified against sink layout"
+          }
+        },
+        {
+          "id": "kitchen_sink",
+          "name": "Kitchen Sink",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Stylish S-411T Undermount Single Bowl — Stainless Steel",
+            "sub": "16-gauge stainless steel • Single large basin • Model S-411T • Replaces previous double-basin standard"
+          }
+        },
+        {
+          "id": "kitchen_island_overhang",
+          "name": "Island Countertop Overhang",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": false,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "15\" Overhang — If Applicable",
+            "sub": "Units with a kitchen island only • 15\" overhang on seating side for a 36\"H island, sized for standard bar stool clearance • Countertop material and colour to match main kitchen countertop spec • Confirm island exists on-site before quoting"
+          }
+        },
+        {
+          "id": "kitchen_gfi",
+          "name": "GFI Receptacle",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "GFCI Outlet — White, 20A",
+            "sub": "20A 125V tamper-resistant self-test GFCI • Install adjacent to sink • Required by Ontario Electrical Code"
+          }
+        },
+        {
+          "id": "kitchen_fridge_circuit",
+          "name": "Fridge Dedicated Circuit",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": {
+            "brand": "Confirm Circuit — If Refrigerator Being Relocated",
+            "sub": "Confirm refrigerator is on its own dedicated circuit back to the panel, or that the existing circuit is ESA-compliant for the relocated position. Flag to Daniko if the circuit is shared with other kitchen loads — do not proceed without confirming, to avoid overloading."
+          }
+        },
+        {
+          "id": "kitchen_hydro_panel",
+          "name": "Hydro Panel Replacement",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": {
+            "brand": "Full Panel Replacement — Kitchen",
+            "sub": "Confirm whether the existing in-suite panel is breaker-style. If not already breaker-style (e.g. older fuse-style panel), replace with a breaker-style panel. Contractor to confirm amperage and breaker count on-site and note below."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "title": "BATHROOM",
+      "type": "spec",
+      "note": "⚡ Electrical Permit Notice: Any electrical work (receptacles, switches, fixtures, fans, panels) must comply with the Ontario Electrical Safety Code. Where a permit is mandated, the contractor is responsible for obtaining it — the cost of the permit is assumed to be included in the quoted price and will not be treated as an extra unless flagged and approved by Daniko in writing before work begins.",
+      "items": [
+        {
+          "id": "bath_vanity_cabinet",
+          "name": "Vanity Cabinet",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "White Shaker — Match Kitchen",
+            "sub": "Manufactured in-house • Same finish and hardware as kitchen"
+          }
+        },
+        {
+          "id": "bath_vanity_top",
+          "name": "Vanity Top",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Classic Calacatta 2038 — Match Kitchen",
+            "sub": "2cm • Double front edge • Rapid Quartz"
+          }
+        },
+        {
+          "id": "bath_vanity_sink",
+          "name": "Vanity Sink",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Rectangular Undermount — White",
+            "sub": "16\"W x 20\"L • Supplier: Rapid Quartz"
+          }
+        },
+        {
+          "id": "bath_vanity_faucet",
+          "name": "Vanity Faucet",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "MOEN Findlay Single Hole — Chrome",
+            "sub": "Model 84516 • Single handle • Push-down drain assembly included • Deckplate included for 1 or 3-hole install"
+          }
+        },
+        {
+          "id": "bath_shower_set",
+          "name": "Tub & Shower Set",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "MOEN Adler — Chrome",
+            "sub": "Model L82839 • Single handle round wall mount • 1-spray bathtub shower faucet with rain shower head • Posi-Temp pressure-balancing valve • Confirm existing brass shower valve is fully replaced, not just the trim • Trim to be caulked at wall on completion"
+          }
+        },
+        {
+          "id": "bath_bathtub",
+          "name": "Bathtub",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "American Standard — Porcelain Enamelled Steel",
+            "sub": "30\"W x 60\"L • White • Left or right handed"
+          }
+        },
+        {
+          "id": "bath_tub_surround_tile",
+          "name": "Tub Surround Tile",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Ceramic Subway — Arctic White, Bright",
+            "sub": "4\"W x 16\"L • 70/30 Brick Lay/Subway • Grout: Snow White Unsanded 551"
+          }
+        },
+        {
+          "id": "bath_waterproofing",
+          "name": "Wall Waterproofing (Tub/Shower)",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Schluter KERDI-BOARD System",
+            "sub": "Applies throughout the full wet-wall assembly — tub surround backing, tile substrate, and base/bottom plate. Replaces cement board. See Schedule A for the window waterproofing detail within tub/shower surrounds."
+          }
+        },
+        {
+          "id": "bath_toilet",
+          "name": "Toilet",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "American Standard — 2-Piece Elongated",
+            "sub": "White • Standard flush"
+          }
+        },
+        {
+          "id": "bath_shower_rod",
+          "name": "Shower Rod",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Zenna Home Curved Hotel Rod — Chrome",
+            "sub": "Model 99336 • Rust-resistant painted steel and zinc construction • Curved design • Fixed wall mount, screwed (not tension) • Adjustable 56\"–72\" • Install 60\" above tub"
+          }
+        },
+        {
+          "id": "bath_accessory_kit",
+          "name": "Bath Accessory Kit",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "MOEN Preston — Chrome, 3-Piece",
+            "sub": "Towel ring, toilet paper holder, towel bar"
+          }
+        },
+        {
+          "id": "bath_fan",
+          "name": "Bathroom Fan",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Cyclone HushTone ESLPD3S100H — Ultra-Quiet Ceiling Exhaust",
+            "sub": "White • Continental Fan Mfg • Replaces Air King AS50 as new Daniko standard • CFM/sone rating to confirm on cut sheet"
+          }
+        },
+        {
+          "id": "bath_mirror",
+          "name": "Mirror",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Rectangular Wall Mirror — 20\" x 28\"",
+            "sub": "Standard trim, white"
+          }
+        },
+        {
+          "id": "bath_gfi",
+          "name": "GFI Receptacle",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "GFCI Outlet — White, 15A",
+            "sub": "15A 125V tamper-resistant self-test GFCI • Required by Ontario Electrical Code near water"
+          }
+        }
+      ]
+    },
+    {
+      "id": "flooring",
+      "title": "FLOORING",
+      "type": "spec",
+      "items": [
+        {
+          "id": "floor_lvp",
+          "name": "Luxury Vinyl Plank",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "SPC Rigid Core LVP — All Living Areas incl. Kitchen & Bathroom",
+            "sub": "5mm • 9\" wide • 48\" length • 1.5mm premium padding • Colour: warm oak / natural tone • Loose lay, glued down, or perimeter glue"
+          }
+        },
+        {
+          "id": "floor_adhesive",
+          "name": "LVP Adhesive",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Ultrabond ECO 360 Premium Adhesive",
+            "sub": "4 GL • Used where glue-down install specified"
+          }
+        }
+      ]
+    },
+    {
+      "id": "paint",
+      "title": "PAINT",
+      "type": "spec",
+      "items": [
+        {
+          "id": "paint_walls",
+          "name": "Walls",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "DULUX Ultra Interior — Eggshell, White",
+            "sub": "18.3L • Colour: Chantilly Lace OC-65 (Sherwin Williams equivalent) • All living areas, bedrooms, kitchen, hallways"
+          }
+        },
+        {
+          "id": "paint_ceilings",
+          "name": "Ceilings",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "DULUX Ultra Interior — Flat, White",
+            "sub": "18.3L • All ceilings"
+          }
+        },
+        {
+          "id": "paint_trim_doors",
+          "name": "Trim & Doors",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "DULUX Ultra Interior — Semi-Gloss, White",
+            "sub": "18.3L • All baseboards, casings, and interior doors"
+          }
+        },
+        {
+          "id": "paint_bathroom",
+          "name": "Bathroom Walls & Ceiling",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Zinsser Perma-White Mould & Mildew-Proof — Tintable Satin",
+            "sub": "3.78L • Self-priming, washable/scrubbable • Mould and mildew resistant, 5-year film guarantee • Replaces standard wall/ceiling paint in bathroom only • If applied near shower, wait 24 hrs before use"
+          }
+        },
+        {
+          "id": "paint_primer",
+          "name": "Primer",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Glidden Ultra Interior — White",
+            "sub": "18.9L • Interior drywall and plaster • Apply before top coat on bare surfaces"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doors_trim",
+      "title": "DOORS, TRIM & HARDWARE",
+      "type": "spec",
+      "items": [
+        {
+          "id": "doors_interior_door",
+          "name": "Interior Door",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "2-Panel Logan Slab — Primed Hollow Core",
+            "sub": "White semi-gloss • 30\"W x 80\"H standard"
+          }
+        },
+        {
+          "id": "doors_privacy_lever",
+          "name": "Privacy Lever",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Weiser Kim — Satin Nickel, with Lock",
+            "sub": "Bedroom and bathroom doors"
+          }
+        },
+        {
+          "id": "doors_passage_lever",
+          "name": "Passage Lever",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Weiser Kim — Satin Nickel, No Lock",
+            "sub": "Hallway and closet doors"
+          }
+        },
+        {
+          "id": "doors_dummy_lever",
+          "name": "Dummy Lever",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Weiser Kim — Satin Nickel, Dummy",
+            "sub": "Closet doors (non-latching)"
+          }
+        },
+        {
+          "id": "doors_hinges",
+          "name": "Door Hinges",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Round — Satin Nickel",
+            "sub": "3\" with 5/8\" radius • Set of 2 per door"
+          }
+        },
+        {
+          "id": "doors_stopper",
+          "name": "Door Stopper",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Brushed Nickel",
+            "sub": "3 5/32\"L x 25/32\"W"
+          }
+        },
+        {
+          "id": "doors_magnetic_catch",
+          "name": "Magnetic Catch",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Stainless Steel — with Striker Plate",
+            "sub": "Closets and double doors"
+          }
+        },
+        {
+          "id": "doors_baseboard",
+          "name": "Baseboard Trim",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Step Bevel — Finger Joint Poplar LVL Primed",
+            "sub": "1/2\" x 5-1/2\" x 10' • Paint semi-gloss white to match doors"
+          }
+        },
+        {
+          "id": "doors_casing",
+          "name": "Door Casing",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Step Bevel — Finger Joint Poplar LVL Primed",
+            "sub": "3/4\" x 3\" x 8'"
+          }
+        },
+        {
+          "id": "doors_trim_sealant",
+          "name": "Trim Sealant",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "DAP Alex Flex — Premium Molding & Trim Sealant",
+            "sub": "White, 300mL • 12-pack"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lighting",
+      "title": "LIGHTING",
+      "type": "spec",
+      "note": "⚡ Electrical Permit Notice: Any electrical work (receptacles, switches, fixtures, fans, panels) must comply with the Ontario Electrical Safety Code. Where a permit is mandated, the contractor is responsible for obtaining it — the cost of the permit is assumed to be included in the quoted price and will not be treated as an extra unless flagged and approved by Daniko in writing before work begins.",
+      "items": [
+        {
+          "id": "light_pot_lights",
+          "name": "Pot Lights",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "4\" Ultra Thin Recessed LED — Colour Temp Adjustable",
+            "sub": "3000K / 4000K / 5000K selectable • White trim"
+          }
+        },
+        {
+          "id": "light_flush_mount",
+          "name": "Flush Mount",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Round Ceiling LED — Chrome, 12\"D",
+            "sub": "4000K • Surface mounted • Bedrooms and hallways"
+          }
+        },
+        {
+          "id": "light_vanity",
+          "name": "Vanity Light",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "LED Bath Bar — White Acrylic / Chrome",
+            "sub": "24\"W • 4000K • Above bathroom mirror"
+          }
+        },
+        {
+          "id": "light_switch",
+          "name": "Light Switch",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Leviton Decora — White",
+            "sub": "15A 120/277V single pole • Replace if cracked, discoloured, or non-functional"
+          }
+        },
+        {
+          "id": "light_3way_switch",
+          "name": "3-Way Switch",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Leviton Decora — White",
+            "sub": "15A 120/277V • Use where two switches control same light"
+          }
+        },
+        {
+          "id": "light_receptacle",
+          "name": "Standard Receptacle",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Tamper-Resistant — White, 15A",
+            "sub": "All rooms except kitchen and bathroom"
+          }
+        },
+        {
+          "id": "light_dimmer",
+          "name": "Dimmer Switch",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Leviton Decora — White",
+            "sub": "15A 120V single-pole/3-way dimmer • Paired with pot light circuits where applicable"
+          }
+        },
+        {
+          "id": "light_gfi",
+          "name": "GFI Receptacle",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "GFCI Outlet — White, 15A",
+            "sub": "Tamper-resistant self-test GFCI • Any additional locations outside kitchen/bathroom requiring GFCI per Ontario Electrical Code"
+          }
+        },
+        {
+          "id": "light_ceiling_fan",
+          "name": "Bedroom Ceiling Fan with Light",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Hampton Bay 36\" Indoor — White",
+            "sub": "Model: TS-36-028 MWH • Integrated LED light kit • Pull string operation (no remote) • Bedrooms and living areas"
+          }
+        }
+      ]
+    },
+    {
+      "id": "closet",
+      "title": "CLOSET",
+      "type": "spec",
+      "items": [
+        {
+          "id": "closet_shelves",
+          "name": "Closet Shelves",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "White Melamine — 5/8\" x 16\"D",
+            "sub": "60\" and 96\" lengths • One set per closet"
+          }
+        },
+        {
+          "id": "closet_shelf_support",
+          "name": "Shelf Support",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "MDF Strip — Shelf Ledger",
+            "sub": "Primed • Per closet"
+          }
+        },
+        {
+          "id": "closet_rod",
+          "name": "Closet Rod",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Steel Oval — Chrome, 1\" x 8'",
+            "sub": "Cut to fit per closet width"
+          }
+        },
+        {
+          "id": "closet_rod_clips",
+          "name": "Closet Rod Clips",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Chrome — Set of 2",
+            "sub": "Per rod"
+          }
+        },
+        {
+          "id": "closet_pantry_conversion",
+          "name": "Pantry Conversion",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": false,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Front Entry Closet — Convert to Pantry",
+            "sub": "Remove sliding or bi-fold doors from front entry closet; install melamine shelving per Daniko layout. Confirm dimensions and shelf count on-site."
+          }
+        }
+      ]
+    },
+    {
+      "id": "supplies",
+      "title": "DANIKO SUPPLIES — DO NOT INCLUDE IN QUOTE",
+      "type": "supplies",
+      "items": [
+        {
+          "name": "Appliances",
+          "detail": "Fridge • Stove/Range • OTR Microwave — Daniko sources and delivers. Contractor to confirm rough-in dimensions and hook up. Confirm OTR microwave exhaust is connected to the existing exhaust duct — this replaces any existing standalone ceiling-mounted exhaust fan near the stove, which is to be removed. Flag to Daniko if no existing exhaust duct is present to connect into."
+        },
+        {
+          "name": "Entry Lock Set",
+          "detail": "Deadbolt + handle for unit entry door — Daniko supplies keyed lock. Contractor installs."
+        },
+        {
+          "name": "Note: Confirm Rough-Ins",
+          "detail": "Confirm appliance cutout sizes and electrical rough-ins with Daniko before ordering cabinets or countertops."
+        }
+      ]
+    },
+    {
+      "id": "windows",
+      "title": "WINDOWS & EXTERIOR DOORS",
+      "type": "spec",
+      "items": [
+        {
+          "id": "win_pane_condition",
+          "name": "Window Pane Condition",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace cracked, fogged, or broken panes" }
+        },
+        {
+          "id": "win_screening",
+          "name": "Window Screening",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace torn, bent, or missing screens" }
+        },
+        {
+          "id": "win_operation",
+          "name": "Window Operation",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Test all windows for smooth open/close and full lock-close functionality. Replace if stiff, binding, or not closing fully." }
+        },
+        {
+          "id": "win_locking",
+          "name": "Locking Mechanism",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Confirm all window locks engage fully. Replace if broken or unable to secure." }
+        },
+        {
+          "id": "win_door_screening",
+          "name": "Door Screening",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace torn, bent, or missing balcony door screen" }
+        },
+        {
+          "id": "win_balcony_door_op",
+          "name": "Balcony Door Operation",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Confirm balcony slider opens, closes, and locks smoothly. Replace if track is bent or rollers are failing." }
+        },
+        {
+          "id": "win_interior_door_slab",
+          "name": "Interior Door Slab",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "Alex Direct 30\"x80\" Primed Hollow Core — 1-Panel Beveled Shaker Style", "sub": "Model HW26681PFBSHF8 • Smooth, primed, ready for paint • Hollow core, no bore • Replace if applicable — confirm door width per opening on-site, not all doors are 30\"" }
+        },
+        {
+          "id": "win_door_stops",
+          "name": "Door Stops",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if missing or damaged" }
+        },
+        {
+          "id": "win_closet_tracks",
+          "name": "Closet / Sliding Door Tracks",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Confirm all closet and sliding door tracks are intact and doors slide freely. Replace if bent or broken." }
+        },
+        {
+          "id": "win_hinge_function",
+          "name": "Hinge & Closing Function",
+          "inputType": "choice",
+          "choices": ["Yes — Repair / Adjust", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "Confirm & Repair — If Applicable", "sub": "Confirm top hinge and closing mechanism function properly — door closes fully and latches without sticking or dragging. Adjust or repair as needed. Flag during walkthrough." }
+        }
+      ]
+    },
+    {
+      "id": "blinds",
+      "title": "BLINDS",
+      "type": "spec",
+      "note": "💡 Note: Blinds are contractor-supplied and contractor-installed under this scope — not a Daniko-supplied item. Confirm exact window and door measurements on-site before ordering.",
+      "items": [
+        {
+          "id": "blind_bedroom",
+          "name": "Bedroom Windows",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Home Decorators Collection 2.5\" Faux Wood Blind — White",
+            "sub": "Model 25FWT2448W • Cordless room-darkening, wand tilt • 3\" matching valance with returns • Inside mount • Contractor to cut to fit • Contractor supplies and installs"
+          }
+        },
+        {
+          "id": "blind_living_room",
+          "name": "Living Room Window",
+          "inputType": "checkbox",
+          "hasQty": true,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Home Decorators Collection 2.5\" Faux Wood Blind — White",
+            "sub": "Model 25FWT2448W • Cordless room-darkening, wand tilt • 3\" matching valance with returns • Inside mount • Contractor to cut to fit"
+          }
+        },
+        {
+          "id": "blind_balcony_door",
+          "name": "Balcony Sliding Door",
+          "inputType": "checkbox",
+          "hasQty": false,
+          "hasPhoto": true,
+          "hasEquiv": true,
+          "spec": {
+            "brand": "Vertical Blinds — White, PVC",
+            "sub": "Track-mounted vertical blinds sized to full slider width • Must clear door track and allow full slide operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bedroom1",
+      "title": "BEDROOM 1",
+      "type": "spec",
+      "note": "⚡ Electrical Permit Notice: Any electrical work (receptacles, switches, fixtures, fans, panels) must comply with the Ontario Electrical Safety Code. Where a permit is mandated, the contractor is responsible for obtaining it — the cost of the permit is assumed to be included in the quoted price and will not be treated as an extra unless flagged and approved by Daniko in writing before work begins.",
+      "items": [
+        {
+          "id": "br1_ceiling",
+          "name": "Ceiling",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace or patch if water-stained, cracked, or damaged. Paint flat white to match spec." }
+        },
+        {
+          "id": "br1_flooring",
+          "name": "Flooring",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "SPC Rigid Core LVP — 5mm, 9\" wide, warm oak tone. Replace if damaged, worn, or mismatched." }
+        },
+        {
+          "id": "br1_walls",
+          "name": "Walls",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Repaint if damaged, heavily marked, or patched. DULUX Ultra Eggshell White — Chantilly Lace OC-65." }
+        },
+        {
+          "id": "br1_baseboard",
+          "name": "Baseboard",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing — Step Bevel Finger Joint Poplar LVL Primed, 1/2\" x 5-1/2\" x 10'." }
+        },
+        {
+          "id": "br1_door_casing",
+          "name": "Door Casing",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing — Step Bevel Finger Joint Poplar LVL Primed, 3/4\" x 3\" x 8'." }
+        },
+        {
+          "id": "br1_door",
+          "name": "Door",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "2-Panel Logan Slab — Primed Hollow Core, White semi-gloss, 30\"W x 80\"H standard." }
+        },
+        {
+          "id": "br1_door_lever",
+          "name": "Door Lever",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Weiser Kim — Satin Nickel, with Lock. Replace if damaged or missing." }
+        },
+        {
+          "id": "br1_trim_casing",
+          "name": "Trim / Casing",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing." }
+        },
+        {
+          "id": "br1_hinges",
+          "name": "Hinges",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Round Satin Nickel, 3\" with 5/8\" radius, set of 2 per door. Replace if damaged or non-functional." }
+        },
+        {
+          "id": "br1_door_stop",
+          "name": "Door Stop",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if missing or damaged." }
+        },
+        {
+          "id": "br1_closet_doors",
+          "name": "Closet Doors",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace closet doors if damaged or missing. Confirm door type (bi-fold, sliding) on-site." }
+        },
+        {
+          "id": "br1_closet_shelves_rod",
+          "name": "Closet Shelves & Rod",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "White Melamine shelves 5/8\" x 16\"D + Steel Oval Chrome rod. Replace if damaged or missing. Refer to Closet section spec." }
+        },
+        {
+          "id": "br1_window_pane",
+          "name": "Window Pane Condition",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace cracked, fogged, or broken panes." }
+        },
+        {
+          "id": "br1_window_screening",
+          "name": "Window Screening",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace torn, bent, or missing screens." }
+        },
+        {
+          "id": "br1_window_operation",
+          "name": "Window Operation",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Test window for smooth open/close and lock function. Flag if stiff, binding, or not sealing fully." }
+        },
+        {
+          "id": "br1_ceiling_light",
+          "name": "Ceiling Light",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Leviton Decora 15A — White. Replace if damaged or discoloured." }
+        },
+        {
+          "id": "br1_light_switch",
+          "name": "Light Switch",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Leviton Decora 15A — White. Replace if damaged or discoloured." }
+        },
+        {
+          "id": "br1_receptacle",
+          "name": "Receptacle",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Tamper-resistant 15A White. Replace if damaged." }
+        }
+      ]
+    },
+    {
+      "id": "bedroom2",
+      "title": "BEDROOM 2",
+      "type": "spec",
+      "note": "⚡ Electrical Permit Notice: Any electrical work (receptacles, switches, fixtures, fans, panels) must comply with the Ontario Electrical Safety Code. Where a permit is mandated, the contractor is responsible for obtaining it — the cost of the permit is assumed to be included in the quoted price and will not be treated as an extra unless flagged and approved by Daniko in writing before work begins.",
+      "items": [
+        {
+          "id": "br2_ceiling",
+          "name": "Ceiling",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace or patch if water-stained, cracked, or damaged. Paint flat white to match spec." }
+        },
+        {
+          "id": "br2_flooring",
+          "name": "Flooring",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "SPC Rigid Core LVP — 5mm, 9\" wide, warm oak tone. Replace if damaged, worn, or mismatched." }
+        },
+        {
+          "id": "br2_walls",
+          "name": "Walls",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Repaint if damaged, heavily marked, or patched. DULUX Ultra Eggshell White — Chantilly Lace OC-65." }
+        },
+        {
+          "id": "br2_baseboard",
+          "name": "Baseboard",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing — Step Bevel Finger Joint Poplar LVL Primed, 1/2\" x 5-1/2\" x 10'." }
+        },
+        {
+          "id": "br2_door_casing",
+          "name": "Door Casing",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing — Step Bevel Finger Joint Poplar LVL Primed, 3/4\" x 3\" x 8'." }
+        },
+        {
+          "id": "br2_door",
+          "name": "Door",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "2-Panel Logan Slab — Primed Hollow Core, White semi-gloss, 30\"W x 80\"H standard." }
+        },
+        {
+          "id": "br2_door_lever",
+          "name": "Door Lever",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Weiser Kim — Satin Nickel, with Lock. Replace if damaged or missing." }
+        },
+        {
+          "id": "br2_trim_casing",
+          "name": "Trim / Casing",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if damaged or missing." }
+        },
+        {
+          "id": "br2_hinges",
+          "name": "Hinges",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Round Satin Nickel, 3\" with 5/8\" radius, set of 2 per door. Replace if damaged or non-functional." }
+        },
+        {
+          "id": "br2_door_stop",
+          "name": "Door Stop",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace if missing or damaged." }
+        },
+        {
+          "id": "br2_closet_doors",
+          "name": "Closet Doors",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace closet doors if damaged or missing. Confirm door type (bi-fold, sliding) on-site." }
+        },
+        {
+          "id": "br2_closet_shelves_rod",
+          "name": "Closet Shelves & Rod",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "White Melamine shelves 5/8\" x 16\"D + Steel Oval Chrome rod. Replace if damaged or missing. Refer to Closet section spec." }
+        },
+        {
+          "id": "br2_window_pane",
+          "name": "Window Pane Condition",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace cracked, fogged, or broken panes." }
+        },
+        {
+          "id": "br2_window_screening",
+          "name": "Window Screening",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Replace torn, bent, or missing screens." }
+        },
+        {
+          "id": "br2_window_operation",
+          "name": "Window Operation",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Test window for smooth open/close and lock function. Flag if stiff, binding, or not sealing fully." }
+        },
+        {
+          "id": "br2_ceiling_light",
+          "name": "Ceiling Light",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Leviton Decora 15A — White. Replace if damaged or discoloured." }
+        },
+        {
+          "id": "br2_light_switch",
+          "name": "Light Switch",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Leviton Decora 15A — White. Replace if damaged or discoloured." }
+        },
+        {
+          "id": "br2_receptacle",
+          "name": "Receptacle",
+          "inputType": "choice",
+          "choices": ["Yes — Replace / Install", "No — Existing satisfactory"],
+          "hasPhoto": false,
+          "hasEquiv": false,
+          "spec": { "brand": "", "sub": "Tamper-resistant 15A White. Replace if damaged." }
+        }
+      ]
+    },
+    {
+      "id": "contractor_notes",
+      "title": "CONTRACTOR NOTES & SCOPE CLARIFICATIONS",
+      "type": "notes"
+    },
+    {
+      "id": "schedule_a",
+      "title": "SCHEDULE A — WINDOW WATERPROOFING STANDARD",
+      "type": "schedule",
+      "passFail": "⚠ Pass/Fail: This detail is inspected at the progress-payment walkthrough. Any window inside a tub/shower surround that does not meet the above fails inspection and progress payment will not be released until corrected.",
+      "items": [
+        {
+          "name": "Scope",
+          "detail": "Applies to any window located inside a tub or shower surround. This is the mandatory waterproofing method for that condition — not optional, not a \"best effort\" item."
+        },
+        {
+          "name": "Frame Build-Out",
+          "detail": "Build out the window frame using Schluter KERDI-BOARD (see Wall Waterproofing spec, Bathroom section) so that sealant bonds directly to the window's vinyl frame — not to backer board. Backer board is not an acceptable bonding surface at the window perimeter."
+        },
+        {
+          "name": "Bottom Plate",
+          "detail": "Bottom plate goes in first and must be pitched toward the shower/tub to shed water away from the frame — no flat or reverse-pitched bottom plates."
+        },
+        {
+          "name": "Screw Holes",
+          "detail": "Every screw hole in the frame and build-out must be sealed. No exposed/unsealed fasteners anywhere in the wet zone."
+        },
+        {
+          "name": "Edge Bonding",
+          "detail": "Bottom, side, and top edges of the window frame must be fully bonded — full contact seal, no gaps, no partial runs of sealant."
+        }
+      ]
+    }
+  ]
+}

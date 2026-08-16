@@ -411,15 +411,23 @@ a { color: var(--blue); text-decoration: none; }
   background: none;
   border: none;
   color: var(--muted2);
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
-  padding: 0 4px;
+  padding: 4px;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 2px;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .item-expand-btn:hover { color: var(--blue); }
+.item-chevron {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.spec-item.expanded .item-chevron { transform: rotate(180deg); }
 
 /* Expanded detail panel */
 .item-detail {
@@ -459,6 +467,20 @@ a { color: var(--blue); text-decoration: none; }
   outline: none;
   border-color: var(--blue);
   background: #fff;
+}
+.detail-input-qty {
+  flex: 0 0 auto;
+  width: 52px;
+  min-width: 52px;
+  text-align: center;
+}
+.detail-textarea {
+  flex: 1;
+  width: 100%;
+  min-width: 120px;
+  resize: vertical;
+  min-height: 40px;
+  font-family: inherit;
 }
 .detail-note {
   font-size: 13px;
@@ -700,7 +722,11 @@ input[type="file"].hidden-file-input { display: none; }
   padding: 16px 0 4px;
   margin-top: 16px;
 }
-.send-area .btn { width: 100%; }
+.send-btn-row {
+  display: flex;
+  gap: 10px;
+}
+.send-btn-row .btn { flex: 1; width: auto; margin-top: 0; }
 .send-hint {
   text-align: center;
   font-size: 12px;
@@ -773,4 +799,71 @@ input[type="file"].hidden-file-input { display: none; }
 @media (min-width: 500px) {
   .main-content { padding: 24px 20px 48px; }
   .notes-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── PRINT / PDF PREVIEW ──
+   Triggered by window.print() (top "Print" button or "Preview PDF" button).
+   Force-expands every section and item card regardless of on-screen
+   collapsed state, hides interactive chrome, and paginates for Letter. */
+@page {
+  size: letter;
+  margin: 0.5in;
+}
+@media print {
+  html { font-size: 11px; }
+  body { background: #fff; }
+
+  /* Hide interactive / navigational chrome */
+  .app-header,
+  .app-footer,
+  .send-area,
+  .record-actions,
+  .item-expand-btn,
+  .photo-upload-btn,
+  .accordion-header .section-chevron,
+  input[type="file"] {
+    display: none !important;
+  }
+
+  /* Force every collapsible region open for print */
+  .accordion-body,
+  .item-detail {
+    display: block !important;
+  }
+  .accordion-header {
+    cursor: default;
+    padding: 10px 0;
+  }
+  .accordion-header:hover,
+  .accordion-header:active {
+    background: none;
+  }
+
+  .screen { display: block !important; }
+  .main-content { max-width: 100%; padding: 0; }
+
+  .accordion-section,
+  .schedule-section,
+  .notes-section {
+    box-shadow: none;
+    border: 1px solid var(--border);
+    break-inside: avoid;
+  }
+  .spec-item {
+    break-inside: avoid;
+    background: #fff;
+  }
+
+  .progress-wrap { box-shadow: none; border: 1px solid var(--border); }
+
+  .detail-input:disabled,
+  .detail-textarea:disabled,
+  .notes-field input:disabled,
+  .notes-field textarea:disabled,
+  .cost-input:disabled,
+  .payment-input:disabled {
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
+    opacity: 1;
+  }
 }

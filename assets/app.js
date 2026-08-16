@@ -91,8 +91,9 @@ function buildBlankSections() {
         out[sec.id][item.id] = {
           checked: false,
           choice: null,
-          qty: '',
+          qty: '1',
           equiv: '',
+          notes: '',
           photos: [],
         };
       });
@@ -178,7 +179,7 @@ function countProgress() {
 }
 
 function getSectionItemState(secId, itemId) {
-  return record.sections[secId]?.[itemId] || { checked: false, choice: null, qty: '', equiv: '', photos: [] };
+  return record.sections[secId]?.[itemId] || { checked: false, choice: null, qty: '1', equiv: '', notes: '', photos: [] };
 }
 
 // ── SECTIONS ───────────────────────────────────
@@ -266,7 +267,9 @@ function renderItem(sec, item) {
     inputHtml = `<div class="item-choice-btns">${btns}</div>`;
   }
 
-  const hasDetails = item.hasQty || item.hasPhoto || item.hasEquiv;
+  // Every item now carries at least a Notes field, so every card gets the
+  // expand/collapse toggle (not just items with Qty/Photo/Equivalent).
+  const hasDetails = true;
 
   el.innerHTML = `
     <div class="item-main">
@@ -276,7 +279,7 @@ function renderItem(sec, item) {
         ${specText ? `<div class="item-spec">${specText}</div>` : ''}
         ${item.inputType === 'choice' ? inputHtml : ''}
       </div>
-      ${hasDetails ? `<button class="item-expand-btn" aria-label="Show details">⋯</button>` : ''}
+      ${hasDetails ? `<button class="item-expand-btn" aria-label="Show details" aria-expanded="false"><span class="item-chevron">▾</span></button>` : ''}
     </div>
     ${hasDetails ? `<div class="item-detail">${renderItemDetail(item, state, isEditable)}</div>` : ''}
   `;
@@ -301,8 +304,11 @@ function renderItem(sec, item) {
 
   // Expand toggle
   if (hasDetails) {
-    el.querySelector('.item-expand-btn').addEventListener('click', () => {
-      el.classList.toggle('expanded');
+    const expandBtn = el.querySelector('.item-expand-btn');
+    expandBtn.addEventListener('click', () => {
+      const nowExpanded = el.classList.toggle('expanded');
+      expandBtn.setAttribute('aria-expanded', String(nowExpanded));
+      expandBtn.setAttribute('aria-label', nowExpanded ? 'Hide details' : 'Show details');
     });
   }
 
@@ -315,10 +321,11 @@ function renderItem(sec, item) {
 function renderItemDetail(item, state, isEditable) {
   let html = '';
   if (item.hasQty) {
+    const qtyVal = (state.qty !== '' && state.qty != null) ? state.qty : '1';
     html += `
       <div class="detail-row">
         <span class="detail-label">Qty</span>
-        <input class="detail-input" type="text" name="qty" placeholder="e.g. 2" value="${esc(state.qty)}" ${isEditable ? '' : 'disabled'}>
+        <input class="detail-input detail-input-qty" type="text" name="qty" placeholder="1" value="${esc(qtyVal)}" ${isEditable ? '' : 'disabled'}>
       </div>`;
   }
   if (item.hasEquiv) {
@@ -328,6 +335,11 @@ function renderItemDetail(item, state, isEditable) {
         <input class="detail-input" type="text" name="equiv" placeholder="Approved equivalent (if any)" value="${esc(state.equiv)}" ${isEditable ? '' : 'disabled'}>
       </div>`;
   }
+  html += `
+    <div class="detail-row">
+      <span class="detail-label">Notes</span>
+      <textarea class="detail-input detail-textarea" name="notes" rows="2" placeholder="Optional notes" ${isEditable ? '' : 'disabled'}>${esc(state.notes)}</textarea>
+    </div>`;
   if (item.hasPhoto) {
     const thumbs = (state.photos || []).map(url =>
       `<img class="photo-thumb" src="${esc(url)}" alt="Photo">`
@@ -337,7 +349,10 @@ function renderItemDetail(item, state, isEditable) {
         <span class="detail-label">Photos</span>
         <div class="photo-row">
           ${thumbs}
-          ${isEditable ? `<button class="photo-upload-btn" type="button">📷 Add photo<input type="file" class="hidden-file-input" accept="image/*"></button>` : ''}
+          ${isEditable ? `
+            <button class="photo-upload-btn photo-camera-btn" type="button">📷 Take Photo<input type="file" class="hidden-file-input" accept="image/*" capture="environment"></button>
+            <button class="photo-upload-btn photo-library-btn" type="button">🖼️ Upload Photo<input type="file" class="hidden-file-input" accept="image/*"></button>
+          ` : ''}
         </div>
       </div>`;
   }
@@ -363,8 +378,15 @@ function wireDetailInputs(el, secId, item, state, isEditable) {
     });
   }
 
-  const photoBtn = el.querySelector('.photo-upload-btn');
-  if (photoBtn) {
+  const notesInput = el.querySelector('textarea[name="notes"]');
+  if (notesInput) {
+    notesInput.addEventListener('input', () => {
+      record.sections[secId][item.id].notes = notesInput.value;
+      scheduleSave();
+    });
+  }
+
+  el.querySelectorAll('.photo-upload-btn').forEach(photoBtn => {
     const fileInput = photoBtn.querySelector('input[type="file"]');
     photoBtn.addEventListener('click', e => {
       if (e.target !== fileInput) fileInput.click();
@@ -372,8 +394,9 @@ function wireDetailInputs(el, secId, item, state, isEditable) {
     fileInput.addEventListener('change', () => {
       const file = fileInput.files[0];
       if (file) uploadPhoto(file, secId, item.id, el);
+      fileInput.value = '';
     });
-  }
+  });
 }
 
 // ── CHECKBOX / CHOICE ─────────────────────────
@@ -585,34 +608,48 @@ function renderSendArea() {
   const allDone = done === total;
   const status = record.status;
 
-  let html = '';
+  let actionBtnHtml = '';
+  let hintHtml = '';
 
   if (status === 'draft') {
-    html = `
+    actionBtnHtml = `
       <button class="btn btn-primary" id="btn-send" ${allDone ? '' : 'disabled'}>
         Send for Pricing
-      </button>
-      <div class="send-hint">${allDone ? 'All items marked — ready to send.' : `${total - done} item(s) still need to be marked before sending.`}</div>
-    `;
+      </button>`;
+    hintHtml = `<div class="send-hint">${allDone ? 'All items marked — ready to send.' : `${total - done} item(s) still need to be marked before sending.`}</div>`;
   } else if (status === 'sent') {
-    html = `
-      <button class="btn btn-primary" id="btn-mark-priced">Mark as Priced</button>
-      <div class="send-hint">Waiting for contractor pricing. Mark as priced once cost fields are filled in.</div>
-    `;
+    actionBtnHtml = `<button class="btn btn-primary" id="btn-mark-priced">Mark as Priced</button>`;
+    hintHtml = `<div class="send-hint">Waiting for contractor pricing. Mark as priced once cost fields are filled in.</div>`;
   } else if (status === 'priced') {
-    html = `
-      <button class="btn btn-success" id="btn-mark-signed">Mark as Signed</button>
-      <div class="send-hint">Review cost and payment details, then mark as signed to finalize.</div>
-    `;
+    actionBtnHtml = `<button class="btn btn-success" id="btn-mark-signed">Mark as Signed</button>`;
+    hintHtml = `<div class="send-hint">Review cost and payment details, then mark as signed to finalize.</div>`;
   } else if (status === 'signed') {
-    html = `<div class="send-hint" style="text-align:center;color:var(--success);font-weight:700;">✓ Contract signed. This record is now read-only.</div>`;
+    hintHtml = `<div class="send-hint" style="text-align:center;color:var(--success);font-weight:700;">✓ Contract signed. This record is now read-only.</div>`;
   }
+
+  const html = `
+    <div class="send-btn-row">
+      ${actionBtnHtml}
+      <button class="btn btn-ghost" id="btn-preview-pdf" type="button">Preview PDF</button>
+    </div>
+    ${hintHtml}
+  `;
 
   area.innerHTML = html;
 
   document.getElementById('btn-send')?.addEventListener('click', sendForPricing);
   document.getElementById('btn-mark-priced')?.addEventListener('click', markPriced);
   document.getElementById('btn-mark-signed')?.addEventListener('click', markSigned);
+  document.getElementById('btn-preview-pdf')?.addEventListener('click', previewPdf);
+}
+
+// ── PDF PREVIEW ─────────────────────────────────
+// Print CSS (see styles.css @media print) force-expands every accordion
+// section and item card, hides interactive chrome, and paginates for
+// Letter-size output — so the browser's Print → Save as PDF dialog
+// produces a full, readable record regardless of on-screen collapsed state.
+function previewPdf() {
+  window.print();
 }
 
 // ── STATUS TRANSITIONS ─────────────────────────

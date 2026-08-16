@@ -18,8 +18,10 @@ async function init() {
   if (recordId) {
     await loadRecord(recordId);
   } else {
-    showScreen('intake');
+    createBlankRecord();
   }
+
+  wireIntakeFields();
 }
 
 // ── SCREENS ────────────────────────────────────
@@ -29,35 +31,21 @@ function showScreen(name) {
   if (el) el.classList.add('active');
 }
 
-// ── INTAKE FORM ────────────────────────────────
-document.getElementById('intake-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const address       = this.address.value.trim();
-  const unit          = this.unit.value.trim();
-  const date          = this.walkthrough_date.value;
-  const unit_type     = this.unit_type.value;
-  const quote_from    = this.quote_from.value.trim();
-  const budget_target = this.budget_target.value.trim();
-  const deadline      = this.deadline.value;
-
-  if (!address)    return toast('Please enter a property address.', 'error');
-  if (!quote_from) return toast('Quote Requested From is required.', 'error');
-
-  const id = slugify(`${address}-${unit || 'na'}-${randSuffix()}`);
-
+// ── RECORD AUTO-CREATE ─────────────────────────
+function createBlankRecord() {
+  const id = slugify(`draft-${randSuffix()}`);
   record = {
     id,
-    address,
-    unit,
-    walkthrough_date: date,
+    address: '',
+    unit: '',
+    walkthrough_date: '',
     status: 'draft',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     formData: {
-      unit_type,
-      quote_from,
-      budget_target,
-      deadline,
+      unit_type: '',
+      quote_from: 'management@daniko.ca',
+      deadline: '',
     },
     sections: buildBlankSections(),
     notes: {
@@ -76,11 +64,27 @@ document.getElementById('intake-form').addEventListener('submit', async function
       sig_date: '',
     }
   };
-
-  await saveRecord();
+  localSave(record);
   history.replaceState(null, '', `?record=${id}`);
   renderApp();
-});
+}
+
+// ── INTAKE FIELD WIRING ────────────────────────
+function wireIntakeFields() {
+  const fields = [
+    { id: 'field-address',          set: v => { if (record) record.address = v; } },
+    { id: 'field-unit',             set: v => { if (record) record.unit = v; } },
+    { id: 'field-walkthrough-date', set: v => { if (record) record.walkthrough_date = v; } },
+    { id: 'field-unit-type',        set: v => { if (record) record.formData.unit_type = v; } },
+    { id: 'field-deadline',         set: v => { if (record) record.formData.deadline = v; } },
+  ];
+  fields.forEach(({ id, set }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input',  () => { set(el.value); scheduleSave(); });
+    el.addEventListener('change', () => { set(el.value); scheduleSave(); });
+  });
+}
 
 function buildBlankSections() {
   const out = {};
@@ -108,8 +112,8 @@ async function loadRecord(id) {
   try {
     const loaded = await remoteLoad(id);
     if (!loaded) {
-      toast('Record not found. Starting new form.', 'error');
-      setTimeout(() => showScreen('intake'), 1500);
+      toast('Record not found. Starting new record.', 'error');
+      setTimeout(() => createBlankRecord(), 1500);
       return;
     }
     record = loaded;
@@ -121,7 +125,7 @@ async function loadRecord(id) {
       record = local;
       renderApp();
     } else {
-      showScreen('intake');
+      createBlankRecord();
     }
   }
 }
@@ -138,12 +142,21 @@ function renderApp() {
 
 // ── HEADER ─────────────────────────────────────
 function renderHeader() {
-  const h = document.getElementById('record-header');
-  h.querySelector('.record-address').textContent =
-    record.address + (record.unit ? ` — Unit ${record.unit}` : '');
-  const unitType = record.formData?.unit_type ? ` · ${record.formData.unit_type}` : '';
-  h.querySelector('.record-meta').textContent =
-    `Walkthrough: ${record.walkthrough_date || '—'}${unitType}  ·  ID: ${record.id}`;
+  // Populate editable property fields (skip if field has focus — user may be typing)
+  const fieldValues = [
+    ['field-address',          record.address || ''],
+    ['field-unit',             record.unit || ''],
+    ['field-walkthrough-date', record.walkthrough_date || ''],
+    ['field-unit-type',        record.formData?.unit_type || ''],
+    ['field-deadline',         record.formData?.deadline || ''],
+  ];
+  fieldValues.forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el && document.activeElement !== el) el.value = val;
+  });
+
+  const idLabel = document.getElementById('record-id-label');
+  if (idLabel) idLabel.textContent = `ID: ${record.id}`;
 
   const pill = document.getElementById('status-pill');
   pill.className = `status-pill ${record.status}`;

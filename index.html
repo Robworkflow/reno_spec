@@ -6,7 +6,7 @@
   <title>Daniko Reno Spec Sheet</title>
   <meta name="description" content="Daniko Management — interactive unit renovation spec sheet for contractors.">
   <meta name="theme-color" content="#1a1a2e">
-  <link rel="stylesheet" href="assets/styles.css?v=08768c2">
+  <link rel="stylesheet" href="assets/styles.css?v=20260816">
 </head>
 <body>
 
@@ -39,61 +39,45 @@
       </div>
     </div>
 
-    <!-- INTAKE SCREEN -->
-    <div class="screen" id="screen-intake">
-      <div class="intake-card">
-        <h2>New Reno Spec Sheet</h2>
-        <p class="subtitle">Enter the property details to create a new spec sheet record.</p>
-        <form id="intake-form" autocomplete="off">
+    <!-- RECORD SCREEN -->
+    <div class="screen" id="screen-record">
+
+      <!-- Editable property fields — auto-saving -->
+      <div class="property-card">
+        <div class="form-group">
+          <label for="field-address">Property Address</label>
+          <input type="text" id="field-address" placeholder="e.g. 100 Main St, Toronto, ON" autocomplete="off">
+        </div>
+        <div class="form-row">
           <div class="form-group">
-            <label for="address">Property Address <span style="color:var(--danger)">*</span></label>
-            <input type="text" id="address" name="address" placeholder="e.g. 100 Main St, Toronto, ON" required>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="unit">Unit / Suite</label>
-              <input type="text" id="unit" name="unit" placeholder="e.g. 412">
-            </div>
-            <div class="form-group">
-              <label for="walkthrough_date">Walkthrough Date</label>
-              <input type="date" id="walkthrough_date" name="walkthrough_date">
-            </div>
+            <label for="field-unit">Unit / Suite</label>
+            <input type="text" id="field-unit" placeholder="e.g. 412" autocomplete="off">
           </div>
           <div class="form-group">
-            <label for="unit_type">Unit Type</label>
-            <select id="unit_type" name="unit_type">
+            <label for="field-unit-type">Unit Type</label>
+            <select id="field-unit-type">
               <option value="">— Select —</option>
               <option value="1BR">1BR</option>
               <option value="2BR">2BR</option>
               <option value="3BR">3BR</option>
             </select>
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group">
-            <label for="quote_from">Quote Requested From <span style="color:var(--danger)">*</span></label>
-            <input type="text" id="quote_from" name="quote_from" placeholder="Contractor name and/or email" required>
+            <label for="field-walkthrough-date">Walkthrough Date</label>
+            <input type="date" id="field-walkthrough-date">
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="budget_target">Budget Target</label>
-              <input type="text" id="budget_target" name="budget_target" placeholder="e.g. $25,000">
-            </div>
-            <div class="form-group">
-              <label for="deadline">Deadline</label>
-              <input type="date" id="deadline" name="deadline">
-            </div>
+          <div class="form-group">
+            <label for="field-deadline">Deadline</label>
+            <input type="date" id="field-deadline">
           </div>
-          <button type="submit" class="btn btn-primary">Create Spec Sheet →</button>
-        </form>
+        </div>
       </div>
-    </div>
 
-    <!-- RECORD SCREEN -->
-    <div class="screen" id="screen-record">
-
-      <!-- Record header with address + status -->
+      <!-- Record meta bar -->
       <div class="record-header" id="record-header">
-        <div class="record-address"></div>
-        <div class="record-meta"></div>
+        <div class="record-id-label" id="record-id-label"></div>
         <div class="record-actions">
           <button class="btn btn-secondary btn-sm" onclick="copyRecordLink()">Copy Link</button>
           <button class="btn btn-ghost btn-sm" onclick="window.print()">Print</button>
@@ -134,8 +118,8 @@
 <!-- Toast notification -->
 <div id="toast" role="alert" aria-live="assertive"></div>
 
-<script src="assets/config.js?v=08768c2"></script>
-<script src="assets/app.js?v=08768c2"></script>
+<script src="assets/config.js?v=20260816"></script>
+<script src="assets/app.js?v=20260816"></script>
 <script>
   function copyRecordLink() {
     navigator.clipboard.writeText(location.href).then(() => {

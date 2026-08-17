@@ -215,6 +215,15 @@ function renderSections() {
   const container = document.getElementById('sections-container');
   container.innerHTML = '';
 
+  // Collect unique section notes; show once at top in print instead of per-section
+  const uniqueNotes = [...new Set(SPEC.sections.filter(s => s.note).map(s => s.note))];
+  if (uniqueNotes.length) {
+    const noticeEl = document.createElement('div');
+    noticeEl.className = 'print-permit-notice';
+    noticeEl.innerHTML = uniqueNotes.join('<br><br>');
+    container.appendChild(noticeEl);
+  }
+
   SPEC.sections.forEach(sec => {
     if (sec.type === 'spec')     container.appendChild(renderSpecSection(sec));
     if (sec.type === 'supplies') container.appendChild(renderSuppliesSection(sec));

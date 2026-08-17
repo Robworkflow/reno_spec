@@ -910,9 +910,20 @@ input[type="file"].hidden-file-input { display: none; }
   }
   .logo-dot,
   .logo-sub,
-  .logo-text,
   .header-status { display: none !important; }
-  .logo { flex-shrink: 0; text-align: right; }
+  .logo {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-text {
+    font-size: 20pt !important;
+    color: #4e9af1 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+  }
   .print-logo {
     display: block !important;
     width: 1.4in;

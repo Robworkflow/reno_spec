@@ -155,6 +155,21 @@ function renderHeader() {
     if (el && document.activeElement !== el) el.value = val;
   });
 
+  // Populate print-only unit info bar
+  const pubFields = [
+    ['pub-address',    record.address || '—'],
+    ['pub-unit',       record.unit || '—'],
+    ['pub-walkthrough', record.walkthrough_date || '—'],
+    ['pub-unit-type',  record.formData?.unit_type || '—'],
+    ['pub-quote-from', record.formData?.quote_from || 'management@daniko.ca'],
+    ['pub-deadline',   record.formData?.deadline || '—'],
+    ['pub-record-id',  record.id],
+  ];
+  pubFields.forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  });
+
   const idLabel = document.getElementById('record-id-label');
   if (idLabel) idLabel.textContent = `ID: ${record.id}`;
 

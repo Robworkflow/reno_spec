@@ -6,7 +6,7 @@
   <title>Daniko Reno Spec Sheet</title>
   <meta name="description" content="Daniko Management — interactive unit renovation spec sheet for contractors.">
   <meta name="theme-color" content="#1a1a2e">
-  <link rel="stylesheet" href="assets/styles.css?v=20260816">
+  <link rel="stylesheet" href="assets/styles.css?v=20260817">
 </head>
 <body>
 
@@ -41,6 +41,17 @@
 
     <!-- RECORD SCREEN -->
     <div class="screen" id="screen-record">
+
+      <!-- Print-only unit info bar — hidden on-screen, populated by renderHeader() -->
+      <div class="print-unit-bar" id="print-unit-bar">
+        <div class="pub-field"><span class="pub-label">Property Address</span><span class="pub-value" id="pub-address"></span></div>
+        <div class="pub-field"><span class="pub-label">Unit / Suite</span><span class="pub-value" id="pub-unit"></span></div>
+        <div class="pub-field"><span class="pub-label">Walkthrough Date</span><span class="pub-value" id="pub-walkthrough"></span></div>
+        <div class="pub-field"><span class="pub-label">Unit Type</span><span class="pub-value" id="pub-unit-type"></span></div>
+        <div class="pub-field"><span class="pub-label">Quote Requested From</span><span class="pub-value" id="pub-quote-from"></span></div>
+        <div class="pub-field"><span class="pub-label">Deadline</span><span class="pub-value" id="pub-deadline"></span></div>
+        <div class="pub-field"><span class="pub-label">Record ID</span><span class="pub-value" id="pub-record-id"></span></div>
+      </div>
 
       <!-- Editable property fields — auto-saving -->
       <div class="property-card">
@@ -118,8 +129,8 @@
 <!-- Toast notification -->
 <div id="toast" role="alert" aria-live="assertive"></div>
 
-<script src="assets/config.js?v=20260816"></script>
-<script src="assets/app.js?v=20260816"></script>
+<script src="assets/config.js?v=20260817"></script>
+<script src="assets/app.js?v=20260817"></script>
 <script>
   function copyRecordLink() {
     navigator.clipboard.writeText(location.href).then(() => {

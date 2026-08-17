@@ -219,6 +219,9 @@ a { color: var(--blue); text-decoration: none; }
   margin-bottom: 12px;
 }
 
+/* ── PRINT-ONLY UNIT INFO BAR (hidden on-screen, shown in @media print) ── */
+.print-unit-bar { display: none; }
+
 /* ── RECORD HEADER ── */
 .record-header {
   background: var(--navy);
@@ -816,58 +819,213 @@ input[type="file"].hidden-file-input { display: none; }
 /* ── PRINT / PDF PREVIEW ──
    Triggered by window.print() (top "Print" button or "Preview PDF" button).
    Force-expands every section and item card regardless of on-screen
-   collapsed state, hides interactive chrome, and paginates for Letter. */
+   collapsed state, hides interactive chrome, and paginates for Letter.
+   Branded to match daniko_spec_sheet_v7.html reference. */
 @page {
   size: letter;
   margin: 0.5in;
 }
 @media print {
-  html { font-size: 11px; }
-  body { background: #fff; }
+  html { font-size: 10pt; }
+  body {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+  }
 
-  /* Hide interactive / navigational chrome */
-  .app-header,
-  .app-footer,
+  /* ── Hide interactive chrome ── */
   .send-area,
   .record-header,
+  .property-card,
+  .progress-wrap,
   .item-expand-btn,
   .photo-upload-btn,
   .accordion-header .section-chevron,
+  .accordion-header .section-count,
   input[type="file"] {
     display: none !important;
   }
 
-  /* Force every collapsible region open for print */
+  /* ── Cover — .app-header becomes branded letterhead ── */
+  .app-header {
+    display: block !important;
+    background: #1a1a2e !important;
+    border-bottom: 5px solid #4e9af1 !important;
+    padding: 36px 40px 28px !important;
+    position: static !important;
+    z-index: auto !important;
+  }
+  .header-inner {
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header-inner::before {
+    content: "Unit Renovation Spec Sheet";
+    color: #fff;
+    font-size: 22pt;
+    font-weight: 700;
+    line-height: 1.2;
+    flex: 1;
+  }
+  .logo-dot,
+  .logo-sub,
+  .header-status { display: none !important; }
+  .logo { flex-shrink: 0; text-align: right; }
+  .logo-text {
+    font-size: 20pt !important;
+    color: #4e9af1 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+  }
+
+  /* ── Print-only unit info bar ── */
+  .print-unit-bar {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px 32px;
+    align-items: flex-start;
+    background: #f0f4fa;
+    border-bottom: 1px solid #d0d8e8;
+    padding: 14px 20px;
+    margin-bottom: 0;
+  }
+  .pub-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .pub-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6b7a9e;
+  }
+  .pub-value {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 1.5px solid #4e9af1;
+    min-width: 100px;
+    padding-bottom: 2px;
+  }
+
+  /* ── Force every collapsible region open ── */
   .accordion-body,
   .item-detail {
     display: block !important;
   }
+
+  /* ── Section headers — dark navy bar matching v7 .section-header ── */
   .accordion-header {
     cursor: default;
-    padding: 10px 0;
+    background: #1a1a2e !important;
+    color: #fff !important;
+    padding: 10px 18px !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .accordion-header:hover,
-  .accordion-header:active {
-    background: none;
-  }
+  .accordion-header:active { background: #1a1a2e !important; }
+  .accordion-header .section-dot { background: #4e9af1 !important; }
+  .accordion-header .section-title { color: #fff !important; font-size: 11pt; letter-spacing: 1.5px; }
 
   .screen.active { display: block !important; }
   .main-content { max-width: 100%; padding: 0; }
 
-  .accordion-section,
+  /* ── Accordion sections — remove card chrome, let header be full-width ── */
+  .accordion-section {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    break-inside: avoid;
+    margin-bottom: 8px;
+  }
+  .accordion-section .accordion-body {
+    padding: 8px 18px 14px;
+    border: 1px solid #dde4f0;
+    border-top: none;
+  }
   .schedule-section,
   .notes-section {
     box-shadow: none;
-    border: 1px solid var(--border);
+    border: 1px solid #dde4f0;
     break-inside: avoid;
   }
+
+  /* ── Spec items — alternating row shading, 9.5pt, no card chrome ── */
   .spec-item {
     break-inside: avoid;
     background: #fff;
+    border: none;
+    border-bottom: 1px solid #e8edf5;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 9.5pt;
+  }
+  .spec-item:nth-child(even) { background: #f8fafd !important; }
+  .items-list {
+    border: none;
   }
 
-  .progress-wrap { box-shadow: none; border: 1px solid var(--border); }
+  /* ── Supplies section — 3-col grid matching v7 .supplies-section ── */
+  .supplies-section {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #f0f4fa !important;
+    border-left: none !important;
+    border-top: 3px solid #4e9af1 !important;
+    border-radius: 0;
+    padding: 16px 18px;
+    break-inside: avoid;
+  }
+  .supplies-title {
+    grid-column: 1 / -1;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .supplies-section .supply-item {
+    background: #fff;
+    border: 1px solid #d0d8e8;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 9pt;
+    margin-bottom: 0;
+  }
+  .supply-name { font-size: 9pt; }
+  .supply-detail { font-size: 8.5pt; }
 
+  /* ── Footer — dark navy bar matching v7 .footer ── */
+  .app-footer {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a2e !important;
+    color: #a0b4cc !important;
+    padding: 12px 40px !important;
+    font-size: 8pt;
+    margin-top: 0;
+  }
+  .app-footer::before {
+    content: "DANIKO Management Ltd.";
+    color: #4e9af1;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+
+  /* ── Fix disabled input rendering ── */
   .detail-input:disabled,
   .detail-textarea:disabled,
   .notes-field input:disabled,

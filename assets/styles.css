@@ -221,6 +221,7 @@ a { color: var(--blue); text-decoration: none; }
 
 /* ── PRINT-ONLY UNIT INFO BAR (hidden on-screen, shown in @media print) ── */
 .print-unit-bar { display: none; }
+.print-logo { display: none; }
 
 /* ── RECORD HEADER ── */
 .record-header {
@@ -538,6 +539,43 @@ a { color: var(--blue); text-decoration: none; }
 .photo-upload-btn:hover { border-color: var(--blue); color: var(--blue); }
 input[type="file"].hidden-file-input { display: none; }
 
+/* ── MIC BUTTON (voice dictation on Notes field) ── */
+.notes-input-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+}
+.notes-input-wrap .detail-textarea { flex: 1; }
+.mic-btn {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .15s, background .15s;
+  line-height: 1;
+  padding: 0;
+}
+.mic-btn:hover { border-color: var(--blue); background: var(--blue-light); }
+.mic-btn.listening {
+  border-color: var(--danger);
+  background: #fee2e2;
+  animation: mic-pulse 1s ease-in-out infinite;
+}
+.mic-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+@keyframes mic-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(220,38,38,0); }
+}
+
 /* ── SUPPLIES SECTION ── */
 .supplies-section {
   border-left: 4px solid var(--blue);
@@ -840,6 +878,7 @@ input[type="file"].hidden-file-input { display: none; }
   .progress-wrap,
   .item-expand-btn,
   .photo-upload-btn,
+  .mic-btn,
   .accordion-header .section-chevron,
   .accordion-header .section-count,
   input[type="file"] {
@@ -871,13 +910,13 @@ input[type="file"].hidden-file-input { display: none; }
   }
   .logo-dot,
   .logo-sub,
+  .logo-text,
   .header-status { display: none !important; }
   .logo { flex-shrink: 0; text-align: right; }
-  .logo-text {
-    font-size: 20pt !important;
-    color: #4e9af1 !important;
-    font-weight: 800 !important;
-    letter-spacing: -1px !important;
+  .print-logo {
+    display: block !important;
+    width: 1.4in;
+    height: auto;
   }
 
   /* ── Print-only unit info bar ── */

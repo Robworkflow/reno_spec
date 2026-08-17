@@ -81,8 +81,8 @@ function wireIntakeFields() {
   fields.forEach(({ id, set }) => {
     const el = document.getElementById(id);
     if (!el) return;
-    el.addEventListener('input',  () => { set(el.value); scheduleSave(); });
-    el.addEventListener('change', () => { set(el.value); scheduleSave(); });
+    el.addEventListener('input',  () => { set(el.value); renderHeader(); scheduleSave(); });
+    el.addEventListener('change', () => { set(el.value); renderHeader(); scheduleSave(); });
   });
 }
 
@@ -366,7 +366,10 @@ function renderItemDetail(item, state, isEditable) {
   html += `
     <div class="detail-row">
       <span class="detail-label">Notes</span>
-      <textarea class="detail-input detail-textarea" name="notes" rows="2" placeholder="Optional notes" ${isEditable ? '' : 'disabled'}>${esc(state.notes)}</textarea>
+      <div class="notes-input-wrap">
+        <textarea class="detail-input detail-textarea" name="notes" rows="2" placeholder="Optional notes" ${isEditable ? '' : 'disabled'}>${esc(state.notes)}</textarea>
+        ${isEditable ? `<button class="mic-btn" type="button" title="Dictate note" aria-label="Start voice dictation">🎤</button>` : ''}
+      </div>
     </div>`;
   if (item.hasPhoto) {
     const thumbs = (state.photos || []).map(url =>
@@ -412,6 +415,37 @@ function wireDetailInputs(el, secId, item, state, isEditable) {
       record.sections[secId][item.id].notes = notesInput.value;
       scheduleSave();
     });
+  }
+
+  const micBtn = el.querySelector('.mic-btn');
+  if (micBtn && notesInput) {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) {
+      micBtn.title = 'Speech input not supported in this browser';
+      micBtn.disabled = true;
+    } else {
+      let recognition = null;
+      micBtn.addEventListener('click', () => {
+        if (micBtn.classList.contains('listening')) {
+          recognition && recognition.stop();
+          return;
+        }
+        recognition = new SR();
+        recognition.lang = 'en-CA';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.onstart = () => micBtn.classList.add('listening');
+        recognition.onend   = () => micBtn.classList.remove('listening');
+        recognition.onerror = () => micBtn.classList.remove('listening');
+        recognition.onresult = e => {
+          const transcript = e.results[0][0].transcript;
+          const sep = notesInput.value.trim() ? ' ' : '';
+          notesInput.value += sep + transcript;
+          notesInput.dispatchEvent(new Event('input', { bubbles: true }));
+        };
+        recognition.start();
+      });
+    }
   }
 
   el.querySelectorAll('.photo-upload-btn').forEach(photoBtn => {
